@@ -1,0 +1,140 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+$bg:#f3e5f5;
+$face-color:#a6becf;
+$ears-color:#819caf;
+$nois-color:#7f11ba;
+$bobu-color:#27354a;
+body
+{
+    height: 100vh;
+    width: 100%;
+}
+.container
+{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: $bg;
+    z-index: 9999;
+    position: absolute;
+    .face
+    {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        background-color: $face-color;
+        border-radius: 50%;
+        &::before
+        {
+            content:'';
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-bottom: 30px solid $face-color;
+            position: absolute;
+            top: -30px;
+            left: 95px;
+        }
+        &::after
+        {
+            content:'';
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-bottom: 20px solid $face-color;
+            position: absolute;
+            top: -20px;
+            left: 120px;
+        }
+    }
+    .eye
+    {
+        width: 85px;
+        height: 85px;
+        background-color: white;
+        position: absolute;
+        border-radius: 50%;
+        top: 55px;
+        &::before
+        {
+            content: '';
+            width: 18px;
+            height: 25px;
+            background-color: $bobu-color;
+            border-radius: 50%;
+            position: absolute;
+            top: 24px;
+            left: 33px;
+        }
+    }
+    .l-eye{left: 45px;}
+    .r-eye{left: 120px;}
+    .noise
+    {
+        position: absolute;
+        width: 70px;
+        height: 110px;
+        background-color: $nois-color;
+        border-radius: 50px;
+        top: 108px;
+        left: 90px;
+    }
+    .ear
+    {
+        width: 155px;
+        height: 155px;
+        background-color: $ears-color;
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+        top: 10px;
+    }
+    .out-ear
+    {
+        width: 185px;
+        position:absolute;
+        z-index: -2;
+        height: 185px;
+        border-radius: 50%;
+        top: -7px;
+        background-image: conic-gradient(
+            #4158D0,
+            #C850C0,
+            #FFCC70,
+            #4158D0);
+    animation: anim 10s linear infinite backwards;
+    }
+    .r-o-ear
+    {
+        left: 140px;
+    }
+    .l-o-ear
+    {
+        right: 140px;
+    }
+    .r-ear
+    {
+        left: 150px;
+    }
+    .l-ear
+    {
+        right: 150px;
+    }
+}
+@keyframes anim
+{
+    0%
+    {
+        transform: rotate(0);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
